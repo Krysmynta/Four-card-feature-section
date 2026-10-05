@@ -1,5 +1,4 @@
 :root {
-
   --Red: hsl(0, 78%, 62%);
   --Cyan: hsl(180, 62%, 55%);
   --Orange: hsl(34, 97%, 64%); 
@@ -17,6 +16,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  font-display: swap;
   font-size: 0.875rem;
   background-color: var(--White);
   display: flex;
@@ -26,16 +26,36 @@ body {
   text-align: center;
   color: var(--Grey-500);
   height: 100vh;
-  padding-block-start: 1rem;
 }
 
 .container {
-  margin-inline: 9rem;
-  margin-block: 4rem;
+  max-height: 100%;
+  margin-inline: 11rem;
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(autofit, minmax(60px, 1fr));
+  grid-template-rows: repeat(autofit, minmax(1rem, 1fr));
+}
+
+.header {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+  overflow: visible;
+  margin-block-end: 0.8rem;
+  margin-block-start: 2.5rem;
+}
+
+.card {
+  border-radius: 5px;
+  padding-inline: 2rem;
+  padding-block-start: 1.7rem;
+  padding-block-end: 1.1rem;
+  box-shadow: 0px 10px 30px -10px lightslategray;
+  display: grid;
+  grid-gap: 1.3rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(autofit, minmax(1rem, 1fr));
+  text-align: left;
 }
 
 .card-text {
@@ -43,32 +63,14 @@ body {
   grid-row: 1 / span 1;
 }
 
-img {
-  grid-column: 4 / span 1;
-  grid-row: 2 / span 1;
-  height: 80%;
-}
-
 h1 {
   display: block;
 }
 
-.header {
-  grid-column: 1 / span 3;
-  grid-row: 1 / span 2;
-  overflow: visible;
-  margin-block-end: 1rem;
-}
-
-.card {
-  border-radius: 5px;
-  padding: 2rem;
-  box-shadow: 0px 10px 20px -5px var(--Grey-400);
-  display: grid;
-  grid-gap: 1.5rem;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(autofit, minmax(20px, 1fr));
-  text-align: left;
+img {
+  grid-column: 4 / span 1;
+  grid-row: 2 / span 1;
+  height: 75%;
 }
 
 .card-1 {
@@ -99,13 +101,13 @@ h1 {
   grid-column: 1 / span 3;
   grid-row: 7;
   font-size: 0.6875rem;
+  padding-block-end: 1rem;
 }
 
 .light-text {
   font-weight: 300;
   color: var(--Grey-400);
 }
-
 
 .attribution {
   text-align: center;
@@ -115,27 +117,25 @@ h1 {
   color: hsl(228, 45%, 44%);
 }
 
-
 @media screen and (max-width: 600px) {
 
-  body {
-    height: auto;
-  }
+body {
+  height: auto;
+}
 
-  .container {
-    margin-inline: 1.5rem;
-    
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: 1fr;
-   grid-template-rows: repeat(6, autofit, minmax(80px, 1fr));
-  }
+.container {
+  margin-inline: 1.5rem;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, autofit, minmax(1rem, 1fr));
+}
 
 h1 {
   font-size: 1.5rem;
 }
 
-.header{
+.header {
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
 }
@@ -172,4 +172,3 @@ h1 {
   grid-column: 1 / span 1;
   grid-row: 6 / span 1;
 }
-
